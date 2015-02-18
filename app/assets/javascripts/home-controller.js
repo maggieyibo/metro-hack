@@ -3,7 +3,7 @@
 
   angular.module('app')
 
-  .controller('HomeController', ['$http', 'RouteService', 'uiGmapGoogleMapApi', function($http, RouteService, uiGmapGoogleMapApi) {
+  .controller('HomeController', ['$http', 'RouteService', 'uiGmapGoogleMapApi', 'LocationsService', function($http, RouteService, uiGmapGoogleMapApi, LocationsService) {
 
     var vm = this;
 
@@ -14,13 +14,30 @@
     // });
 
 
-    // This code runs after the Google Map Api is loaded
+
+
+
     uiGmapGoogleMapApi.then(function(maps) {
       vm.map = { center: { latitude: 34.0500, longitude: -118.2500 }, zoom: 12 };
     });
 
     RouteService.routes.then(function(data) {
       vm.routes = data;
+    });
+
+    LocationsService.locations.then(function(locations) {
+      var c = 0;
+      _.forEach(locations, function(l) {
+        l.id = c;
+        l.coords = {
+          "longitude": l.longitude,
+          "latitude": l.latitude
+        }
+        delete l.longitude;
+        delete l.latitude;
+        c++;
+      })
+      vm.busses = locations;
     });
 
   }]);
