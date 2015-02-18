@@ -3,12 +3,14 @@
 <head>
   <title>Metro Hack</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="app">
 
-<%= yield %>
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
 
 </body>
 </html>

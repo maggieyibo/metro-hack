@@ -2,7 +2,7 @@
   'use strict';
 
 
-  angular.module('app', ['ui.router', 'ngResource', 'templates'])
+  angular.module('app', ['ui.router', 'ngResource', 'templates', 'uiGmapgoogle-maps'])
 
 
   .config([

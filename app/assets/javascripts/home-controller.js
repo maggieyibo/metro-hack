@@ -13,6 +13,7 @@
     //   vm.posList = data;
     // });
 
+    vm.map = { center: { latitude: 34.0500, longitude: -118.2500 }, zoom: 8 };
 
     RouteService.routes.then(function(data) {
       vm.routes = data;
