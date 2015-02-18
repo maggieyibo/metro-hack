@@ -14,8 +14,9 @@
     // });
 
 
+    // This code runs after the Google Map Api is loaded
     uiGmapGoogleMapApi.then(function(maps) {
-      vm.map = { center: { latitude: 34.0500, longitude: -118.2500 }, zoom: 8 };
+      vm.map = { center: { latitude: 34.0500, longitude: -118.2500 }, zoom: 12 };
     });
 
     RouteService.routes.then(function(data) {
