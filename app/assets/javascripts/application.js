@@ -16,6 +16,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-rails-templates
+//= require bootstrap-sprockets
 //
 // Templates in app/assets/javascript/templates
 //= require_tree ./templates
