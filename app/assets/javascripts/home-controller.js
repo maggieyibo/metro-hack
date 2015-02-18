@@ -3,7 +3,7 @@
 
   angular.module('app')
 
-  .controller('HomeController', ['$http', 'RouteService', function($http, RouteService) {
+  .controller('HomeController', ['$http', 'RouteService', 'uiGmapGoogleMapApi', function($http, RouteService, uiGmapGoogleMapApi) {
 
     var vm = this;
 
@@ -13,7 +13,10 @@
     //   vm.posList = data;
     // });
 
-    vm.map = { center: { latitude: 34.0500, longitude: -118.2500 }, zoom: 8 };
+
+    uiGmapGoogleMapApi.then(function(maps) {
+      vm.map = { center: { latitude: 34.0500, longitude: -118.2500 }, zoom: 8 };
+    });
 
     RouteService.routes.then(function(data) {
       vm.routes = data;
