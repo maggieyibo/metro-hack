@@ -11,7 +11,15 @@
 </nav>
 <div class="angular-google-map-container">
 
-  <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'></ui-gmap-google-map>
+  <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'>
+
+<!--   <ui-gmap-marker coords="latitude: 34.0500, longitude: -118.2500" idkey="0">
+  </ui-gmap-marker> -->
+
+    <ui-gmap-markers models="vm.busses" coords="'coords'" icon="'icon'">
+    </ui-gmap-markers>
+
+  </ui-gmap-google-map>
 
 </div>
 
