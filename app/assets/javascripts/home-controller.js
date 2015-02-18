@@ -7,8 +7,12 @@
 
     var vm = this;
 
+    var vehPosListUrl = 'http://api.metro.net/agencies/lametro/vehicles';
 
-    vm.test = "angular is successfully set up";
+    $http.get(vehPosListUrl, {headers: {'Content-Type': 'application/json'}}).success(function(data) {
+      vm.posList = data;
+    });
+
 
 
   }]);
